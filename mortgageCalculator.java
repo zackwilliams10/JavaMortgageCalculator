@@ -7,12 +7,12 @@ public class mortgageCalculator {
         final byte PERCENT = 100;
 
         int principal = 0; //variable must be outside of while loop
-        float monthlyInterest = 0;
-        int numberOfPayments = 0;
+        float monthlyInterest = 0;  //variable must be outside of while loop
+        int numberOfPayments = 0;   //variable must be outside of while loop
 
         Scanner scanner = new Scanner(System.in);
     while (true) {
-        System.out.print("Principal: ");
+        System.out.print("Principal loan amount: ");
         principal = scanner.nextInt();
         if (principal >= 5000 && principal <= 1_000_000)
             break;
@@ -40,6 +40,6 @@ public class mortgageCalculator {
                     * (monthlyInterest * Math.pow(1 + monthlyInterest, numberOfPayments))
                     / (Math.pow(1 + monthlyInterest, numberOfPayments) - 1);
         String mortgageFormatted = NumberFormat.getCurrencyInstance().format(mortgage);
-        System.out.println("Your approx monthly Mortgage payment would be: " + mortgageFormatted);
+        System.out.println("Your approx monthly Mortgage payment would be: " + mortgageFormatted + " , not including taxes or insurance charges");
     }
 }
